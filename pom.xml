@@ -3,16 +3,20 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.primefaces</groupId>
-    <artifactId>showcase</artifactId>
+    <artifactId>faces</artifactId>
     <packaging>war</packaging>
-    <version>6.0-SNAPSHOT</version>
+	<version>1.0-SNAPSHOT</version>   
 
-    <name>primefaces-showcase</name>
+    <name>faces-showcase</name>
     <url>http://maven.apache.org</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+  <scm>
+        <developerConnection>scm:git:https://github.com/rajinovat/faces.git</developerConnection>
+          <tag>showcase-1.0</tag>
+  </scm>
 
     <dependencies>
         <dependency>
@@ -144,6 +148,22 @@
             <artifactId>barcode4j-light</artifactId>
             <version>2.1</version>
         </dependency>
+        <dependency>
+  <groupId>jaxen</groupId>
+  <artifactId>jaxen</artifactId>
+  <version>1.1.3</version>
+  <!-- http://jira.codehaus.org/browse/JAXEN-217 -->
+  <exclusions>
+    <exclusion>
+      <groupId>maven-plugins</groupId>
+      <artifactId>maven-cobertura-plugin</artifactId>
+    </exclusion>
+    <exclusion>
+      <groupId>maven-plugins</groupId>
+      <artifactId>maven-findbugs-plugin</artifactId>
+    </exclusion>
+  </exclusions>
+</dependency>
     </dependencies>
 
     <repositories>
@@ -152,11 +172,38 @@
             <name>PrimeFaces Maven Repository</name>
             <url>http://repository.primefaces.org</url>
         </repository>
+          <repository>
+   <id>maven2</id>
+   <url>http://repo1.maven.org/maven2</url>
+  </repository>
+      <repository>
+        <id>org.springframework.maven.release</id>
+        <name>Spring Maven Release Repository</name>
+        <url>http://repo.springsource.org/libs-release-local</url>
+        <releases><enabled>true</enabled></releases>
+        <snapshots><enabled>false</enabled></snapshots>
+    </repository>
+    <!-- For testing against latest Spring snapshots -->
+    <repository>
+        <id>org.springframework.maven.snapshot</id>
+        <name>Spring Maven Snapshot Repository</name>
+        <url>http://repo.springsource.org/libs-snapshot-local</url>
+        <releases><enabled>false</enabled></releases>
+        <snapshots><enabled>true</enabled></snapshots>
+    </repository>
+    <!-- For developing against latest Spring milestones -->
+    <repository>
+        <id>org.springframework.maven.milestone</id>
+        <name>Spring Maven Milestone Repository</name>
+        <url>http://repo.springsource.org/libs-milestone-local</url>
+        <snapshots><enabled>false</enabled></snapshots>
+    </repository>
     </repositories>
 
     <build>
         <resources>
             <resource>
+            
                 <directory>src/main/resources</directory>
                 <filtering>true</filtering>
             </resource>
@@ -217,7 +264,8 @@
                 <dependency>
                     <groupId>org.primefaces</groupId>
                     <artifactId>primefaces</artifactId>
-                    <version>6.0-SNAPSHOT</version>
+                    <!--   <version>6.0-SNAPSHOT</version>-->
+                    <version>5.3.RC2</version>
                 </dependency>
                 <dependency>
                     <groupId>org.glassfish</groupId>
