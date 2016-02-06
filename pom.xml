@@ -253,13 +253,6 @@
         </extensions>
     </build>
 
-    <distributionManagement>
-        <repository>
-            <id>prime-repo</id>
-            <name>PrimeFaces Maven Repository</name>
-            <url>sftp://primefaces.org/var/www/repository</url>
-        </repository>
-    </distributionManagement>
 
     <profiles>
         <profile>
