@@ -4,7 +4,7 @@
     <groupId>org.primefaces</groupId>
     <artifactId>faces</artifactId>
     <packaging>war</packaging>
-	<version>1.1-SNAPSHOT</version>   
+	<version>1.1</version>   
 
     <name>faces-showcase</name>
     <url>http://maven.apache.org</url>
@@ -17,7 +17,7 @@
     </properties>
   <scm>
         <developerConnection>scm:git:https://github.com/rajinovat/faces.git</developerConnection>
-          <tag>showcase-1.0</tag>
+          <tag>faces-1.1</tag>
   </scm>
 
     <dependencies>
